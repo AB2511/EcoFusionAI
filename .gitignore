@@ -1,0 +1,109 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv/
+.env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Documentation/Fix files (not needed for GitHub)
+EARTH_ENGINE_*.md
+MODIS_*.md
+CRITICAL_FIXES_APPLIED.md
+JSON_SYNTAX_*.md
+IMMEDIATE_FIX_INSTRUCTIONS.md
+UPGRADE_SUMMARY.md
+PROJECT_STATUS.md
+FINAL_DELIVERABLE.md
+GITHUB_UPDATE_COMMANDS.md
+
+# Test files (not needed for production)
+test_*.py
+run_*.py
+generate_*.py
+
+# Old/unused notebooks
+notebooks/*_FIXED.ipynb
+notebooks/*_WORKING.ipynb
+notebooks/*_CRITICAL_FIX.ipynb
+notebooks/0101_*.ipynb
+notebooks/EcofusionAI*.ipynb
+notebooks/*.zip
+
+# Unused data files
+data/0007221-*.csv
+data/ecofusion_dataset.csv
+data/ecofusion_ml_ready.csv
+data/birdnet_aggregated.csv
+data/inat_summary.csv
+data/fusion_metadata_summary.csv
+data/*.png
+
+# Unused model files
+models/ecofusion_rf_model.pkl
+models/ecofusion_rf_model_balanced.pkl
+models/ecofusion_features_v2.txt
+models/ecofusion_feature_importance_v2.csv
+models/ecofusion_metrics_v2.json
+
+# Output folder (generated files)
+outputs/
+
+# Earth Engine authentication
+.config/
+ee_auth.py
