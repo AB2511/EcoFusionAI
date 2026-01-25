@@ -1,16 +1,16 @@
 # Core Data Processing
-pandas==2.2.2
-numpy==1.26.4
+pandas>=2.0.0
+numpy>=1.24.0
 
 # Machine Learning
-scikit-learn==1.4.2
+scikit-learn>=1.3.0
 
 # Visualization
-matplotlib==3.8.4
-seaborn==0.13.2
+matplotlib>=3.7.0
+seaborn>=0.12.0
 
 # Web Application
-streamlit==1.30.0
+streamlit>=1.28.0
 
 # Earth Engine (for Notebook 1 - Phase 1 connection)
 earthengine-api
