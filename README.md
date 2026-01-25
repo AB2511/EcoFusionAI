@@ -2,13 +2,6 @@
 
 ## 🎓 Final Year BE Project – Computer Engineering (SPPU)
 
-**Team Members:**
-- **Akhila Ohmkumar**
-- **Anjali Barge** 
-- **Neha Dhurgude**
-- **Dhanashree Jadhav**
-- **Tanvi Powar**
-
 **EcoFusionAI is a research-grade, multimodal early-warning system that detects biodiversity stress trends using satellite vegetation health, species occurrence data, and bird acoustic activity.**
 
 ## 🚀 **Live Demo**
