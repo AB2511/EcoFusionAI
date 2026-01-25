@@ -2,7 +2,17 @@
 
 ## 🎓 Final Year BE Project – Computer Engineering (SPPU)
 
+**Team Members:**
+- **Akhila Ohmkumar**
+- **Anjali Barge** 
+- **Neha Dhurgude**
+- **Dhanashree Jadhav**
+- **Tanvi Powar**
+
 **EcoFusionAI is a research-grade, multimodal early-warning system that detects biodiversity stress trends using satellite vegetation health, species occurrence data, and bird acoustic activity.**
+
+## 🚀 **Live Demo**
+**🌐 Try the app: [https://ecofusionai.streamlit.app/](https://ecofusionai.streamlit.app/)**
 
 The system integrates:
 - 🛰️ **Satellite-derived vegetation health** (NDVI – MODIS)
@@ -115,23 +125,30 @@ Demonstrate multimodal AI applied to ecology.
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### 🌐 **Live Demo (Recommended)**
+**Visit the deployed app: [https://ecofusionai.streamlit.app/](https://ecofusionai.streamlit.app/)**
+
+No installation required! Explore the complete multimodal biodiversity monitoring system directly in your browser.
+
+### 💻 **Local Development**
+
+#### Prerequisites
 - Python 3.8+
 - Google Earth Engine account (for Notebook 1)
 
-### Installation
+#### Installation
 ```bash
 git clone https://github.com/AB2511/EcoFusionAI.git
 cd EcoFusionAI
 pip install -r requirements.txt
 ```
 
-### Running the Dashboard
+#### Running Locally
 ```bash
 streamlit run app.py
 ```
 
-### Processing Pipeline
+### 📓 **Processing Pipeline**
 1. **Notebook 1**: NDVI extraction (requires Earth Engine authentication)
 2. **Notebook 2**: GBIF + Audio data processing  
 3. **Notebook 3**: Multimodal fusion + ML analysis
@@ -176,6 +193,29 @@ EcoFusionAI/
 
 **This project is a decision-support prototype, not a consumer app.**
 
+## 🌐 **Live Application**
+
+**🚀 Experience EcoFusionAI: [https://ecofusionai.streamlit.app/](https://ecofusionai.streamlit.app/)**
+
+### **Dashboard Features:**
+- 📊 **Overview** - System introduction and key metrics
+- 📈 **Biodiversity Trends** - Long-term species richness analysis
+- 🚨 **Early Warning System** - Real-time biodiversity stress alerts
+- 🤖 **ML Model Insights** - Feature importance and model performance
+- 🛰️ **Exploratory NDVI View** - Regional vegetation health analysis
+
 ---
+
+## 👥 **Project Team**
+
+**Final Year BE Students - Computer Engineering (SPPU)**
+
+| Team Member | Role |
+|-------------|------|
+| **Akhila Ohmkumar** | Team Member |
+| **Anjali Barge** | Team Member |
+| **Neha Dhurgude** | Team Member |
+| **Dhanashree Jadhav** | Team Member |
+| **Tanvi Powar** | Team Member |
 
 *Final Year BE Project | Computer Engineering | SPPU*
