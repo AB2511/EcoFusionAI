@@ -169,15 +169,16 @@
 │              Feature Importance Architecture                │
 ├─────────────────────────────────────────────────────────────┤
 │ Results (Random Forest):                                   │
-│   1. ndvi_mean: 42.4% (Environmental dominance)           │
-│   2. occurrences: 36.8% (Sampling effect)                 │
-│   3. ndvi_std: 20.8% (Environmental variability)          │
+│   1. ndvi_mean: 46.0% (Environmental dominance)           │
+│   2. occurrences: 28.6% (Sampling effect)                 │
+│   3. ndvi_std: 25.4% (Environmental variability)          │
 │   4. audio_signal_strength: 0.0% (Constant signal)        │
 │                                                            │
 │ Scientific Insight:                                        │
 │   • Environmental factors drive biodiversity patterns      │
 │   • Sampling effort significantly affects measurements     │
-│   • Validates environment → species response hypothesis    │
+│   • NDVI (vegetation health) is primary driver            │
+│   • Audio signal constant due to regional aggregation     │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -185,33 +186,39 @@
 
 #### A. **Web Application Architecture**
 ```python
-# Architecture: Five-tab research dashboard
+# Architecture: Six-tab research dashboard
 ┌─────────────────────────────────────────────────────────────┐
 │                Streamlit Dashboard Architecture             │
 ├─────────────────────────────────────────────────────────────┤
 │ Tab 1: Overview                                            │
 │   • Research-grade positioning statement                   │
 │   • SPPU Final Year BE Project branding                   │
-│   • Decision-support prototype disclaimer                  │
+│   • Key metrics and current system status                  │
 │                                                            │
-│ Tab 2: Biodiversity Trends                                │
-│   • GBIF species richness timeline                        │
+│ Tab 2: Scientific Methodology                             │
+│   • Temporal alignment strategy explanation                │
+│   • Data fusion process documentation                      │
+│   • Scientific justification for approach                  │
+│                                                            │
+│ Tab 3: Biodiversity Trends                                │
+│   • GBIF species richness timeline (1990-2024)            │
 │   • Sampling bias correction explanation                   │
+│   • Long-term baseline analysis                            │
 │                                                            │
-│ Tab 3: Early Warning System                               │
+│ Tab 4: Early Warning System                               │
 │   • Eco-stress index visualization                        │
-│   • Risk threshold alerts                                  │
-│   • 2024 HIGH RISK detection                              │
+│   • Risk threshold alerts (Low/Medium/High)                │
+│   • Current status: 0.308 (Low Risk)                      │
 │                                                            │
-│ Tab 4: ML Model Insights                                  │
-│   • Model performance comparison                           │
-│   • Feature importance visualization                       │
+│ Tab 5: ML Model Insights                                  │
+│   • Model performance comparison (Linear vs Random Forest) │
+│   • Feature importance visualization (NDVI dominance)      │
 │   • Small dataset limitation acknowledgment                │
 │                                                            │
-│ Tab 5: Exploratory NDVI View (Phase-1)                   │
-│   • Regional NDVI breakdown                               │
-│   • Phase-1 → Phase-2 bridge explanation                  │
-│   • Individual region trend analysis                       │
+│ Tab 6: NDVI Regional Analysis                             │
+│   • Regional NDVI breakdown (3 Western Ghats regions)     │
+│   • Temporal trends (2018-2024)                           │
+│   • Individual region health assessment                    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -334,42 +341,53 @@
 ```
 EcoFusion/
 ├── data/                                    # Input Data Layer
-│   ├── ndvi_temporal_dataset_POINT_SAMPLING.csv  # �️ NDVI point sampling (21 records)
-│   ├── gbif_biodiversity_yearly.csv              # 🦅 Species trends (35 years)
-│   ├── audio_species_richness.csv                # � Audio metadata (182 species)
+│   ├── ndvi_temporal_dataset_POINT_SAMPLING.csv  # 🛰️ NDVI point sampling (21 records)
+│   ├── gbif_biodiversity_yearly_WESTERN_GHATS.csv # 🦅 Species trends (16 years, 1990-2013)
+│   ├── audio_species_richness_WESTERN_GHATS.csv   # 🔊 Audio metadata (163 species)
+│   ├── audio_signal_summary_WESTERN_GHATS.csv     # 🔊 Audio signal summary
+│   ├── species_stress_indicators_WESTERN_GHATS.csv # 🚨 Species stress analysis
 │   └── naturalearth/                             # 🗺️ Geographic boundaries
 │
 ├── models/                                  # Model Persistence Layer
 │   ├── ecofusion_rf_v2.pkl                      # 🤖 Random Forest v2
-│   └── ecofusion_features_v2.txt                # 📋 Feature list
+│   ├── ecofusion_features_v2.txt                # 📋 Feature list
+│   ├── ecofusion_feature_importance_v2.csv      # 🎯 Feature importance
+│   └── ecofusion_metrics_v2.json                # 📊 Model metrics
 │
 ├── outputs/                                 # Results & Artifacts Layer
-│   ├── fusion_multimodal_dataset.csv            # 🔬 Fused dataset (7 years)
+│   ├── fusion_multimodal_dataset_WESTERN_GHATS.csv # 🔬 Fused dataset (7 years)
 │   ├── model_results_summary.csv                # 📊 ML performance
 │   └── feature_importance.csv                   # 🎯 Driver analysis
 │
 └── notebooks/                               # Processing Pipeline
-    ├── notebook_01_environment_ndvi.ipynb       # �️ NDVI extraction
-    ├── notebook_02_biodiversity_audio.ipynb     # 🦅 GBIF + Audio
+    ├── notebook_01_environment_ndvi.ipynb       # 🛰️ NDVI extraction
+    ├── notebook-2-biodiversity-feature-engineering.ipynb # 🦅 GBIF + Audio
     └── notebook_03_multimodal_fusion.ipynb      # 🔬 ML fusion
 ```
 
 ### **Data Schema Architecture**
 
-#### **Fusion Dataset Schema (fusion_multimodal_dataset.csv)**
+#### **Fusion Dataset Schema (fusion_multimodal_dataset_WESTERN_GHATS.csv)**
 ```python
-Schema: Multimodal temporal dataset
+Schema: Multimodal temporal dataset (Western Ghats focused)
 ├── year: int                          # Temporal dimension (2018-2024)
 ├── species_richness: int              # GBIF species count
 ├── occurrences: int                   # GBIF observation count
 ├── species_per_1000_occ: float        # Sampling-corrected richness (TARGET)
+├── species_per_1000_occ_smooth: float # Smoothed richness indicator
 ├── ndvi_mean: float                   # Regional NDVI average
 ├── ndvi_std: float                    # NDVI variability
-├── audio_signal_strength: float       # Acoustic proxy (constant)
-└── eco_stress_index: float            # Composite stress indicator
+├── audio_signal_strength: float       # Acoustic proxy (0.899 constant)
+├── species_stress_index: float        # Species-specific stress indicator
+├── critical_species_stress: float     # Critical species stress level
+├── high_species_stress: float         # High stress species indicator
+├── eco_stress_index: float            # Composite stress indicator
+├── environmental_stress: float        # Environmental component
+└── biodiversity_decline: float        # Biodiversity decline indicator
 
-Records: 7 rows × 8 columns (2018-2024)
-Target: Regression (species_per_1000_occ)
+Records: 7 rows × 14 columns (2018-2024)
+Target: Regression (species_per_1000_occ_smooth)
+Current Status: 0.308 eco_stress_index (Low Risk)
 ```
 
 #### **Model Results Schema**
@@ -488,6 +506,12 @@ Feature Importance Schema:
 │   • Load time: <5 seconds                                 │
 │   • Plot rendering: <2 seconds                            │
 │   • Interactive response: Real-time                        │
+│                                                            │
+│ Current System Status (January 2026):                     │
+│   • Eco-stress index: 0.308 (🟢 Low Risk)                │
+│   • Bird species analyzed: 163 (Western Ghats)            │
+│   • Audio signal strength: 0.247 (24.7% ecosystem health) │
+│   • NDVI dominance: 46.0% feature importance              │
 │                                                            │
 │ Memory Usage:                                             │
 │   • Peak RAM: <2GB                                        │
