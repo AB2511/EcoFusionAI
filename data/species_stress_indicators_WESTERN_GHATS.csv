@@ -1,0 +1,6 @@
+species_code,species_name,recordings,audio_strength,weight,threat_level,species_stress,weighted_contribution
+whcbar1,White-cheeked Barbet,54,1.0,0.25,CRITICAL,0.0,0.25
+insbab1,Indian Scimitar Babbler,50,0.925925925925926,0.22,HIGH,0.01629629629629627,0.20370370370370372
+mawthr1,Malabar Whistling Thrush,43,0.7962962962962963,0.2,CRITICAL,0.040740740740740744,0.15925925925925927
+grejun2,Grey Junglefowl,45,0.8333333333333334,0.18,HIGH,0.029999999999999992,0.15
+blhori1,Black-hooded Oriole,49,0.9074074074074074,0.15,MEDIUM,0.013888888888888883,0.1361111111111111
