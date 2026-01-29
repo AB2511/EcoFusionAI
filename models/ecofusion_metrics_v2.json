@@ -1,0 +1,17 @@
+{
+  "best_model": "Random Forest",
+  "f1_score": 0.9744588744588745,
+  "auc_score": 0.5,
+  "cv_mean": NaN,
+  "cv_std": NaN,
+  "features": [
+    "ndvi_change",
+    "bird_presence_norm",
+    "inat_species_richness",
+    "inat_obs_total",
+    "obs_per_species",
+    "ndvi_severity"
+  ],
+  "training_samples": 93,
+  "test_samples": 40
+}

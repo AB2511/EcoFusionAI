@@ -1,0 +1,7 @@
+feature,importance
+bird_presence_norm,1.0
+ndvi_change,0.0
+inat_species_richness,0.0
+inat_obs_total,0.0
+obs_per_species,0.0
+ndvi_severity,0.0

@@ -1,0 +1,6 @@
+ndvi_change
+bird_presence_norm
+inat_species_richness
+inat_obs_total
+obs_per_species
+ndvi_severity
