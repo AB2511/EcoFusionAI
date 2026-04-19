@@ -91,5 +91,3 @@ https://doi.org/10.15468/dl.zdxvtf
 **🎓 Academic Project:** Final Year BE - Computer Engineering (SPPU)  
 **📧 Repository:** [https://github.com/AB2511/EcoFusionAI](https://github.com/AB2511/EcoFusionAI)  
 **🌐 Live Demo:** [https://ecofusionai.streamlit.app/](https://ecofusionai.streamlit.app/)
-
-**Status:** ✅ Complete and Ready for Academic Defense
